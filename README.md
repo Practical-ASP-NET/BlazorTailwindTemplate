@@ -8,7 +8,7 @@ dotnet new --install PracticalDotNet.TailwindStarterProject::6.0.0-rc2.1
 
 ## Install template from source
 
-Download the source then you can install template 'offline'.
+Download the source then you can install the template 'offline'.
 
 ```bash
 cd content
