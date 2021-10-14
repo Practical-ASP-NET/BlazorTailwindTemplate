@@ -75,7 +75,7 @@ Taking the above example, if you looked at `ExampleApp\ExampleApp.csproj` you sh
 
 ```
 
-If you wish to use a different version of .NET you will need to either:
+If you wish to use a different version of .NET you have a couple of options:
 
-a) manually change the version numbers in here or 
-b) use the Nuget package manager in your IDE to downgrade the NuGet packages, and/or the .NET version.
+- manually change the version numbers in here 
+- use the Nuget package manager in your IDE to downgrade the NuGet packages, and/or the .NET version.
