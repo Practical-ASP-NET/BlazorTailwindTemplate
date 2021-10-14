@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <PackageId>PracticalDotNet.TailwindStarterProject</PackageId>
-        <PackageVersion>6.0.0-rc2</PackageVersion>
+        <Version>6.0.0-rc2</Version>
         <Title>Blazor Tailwind Project Template</Title>
         <Authors>Jon Hilton</Authors>
         <Description>Project template to create Blazor WASM projects with Tailwind CSS</Description>
