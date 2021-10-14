@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <PackageId>PracticalDotNet.TailwindStarterProject</PackageId>
+        <PackageVersion>6.0.0-rc2</PackageVersion>
+        <Title>Blazor Tailwind Project Template</Title>
+        <Authors>Jon Hilton</Authors>
+        <Description>Project template to create Blazor WASM projects with Tailwind CSS</Description>
+        <PackageProjectUrl>https://practicaldotnet.io</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageIconUrl>https://practicaldotnet.io/purple-logo-square.png</PackageIconUrl>
+        <RepositoryUrl>https://github.com/Practical-ASP-NET/TailwindBlazorStarter</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>blazor;tailwindcss;wasm;tailwind</PackageTags>
+        <LangVersion>latest</LangVersion>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**"/>
+        <Compile Remove="**\*"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Carter" Version="5.2.0"/>
+    </ItemGroup>
+
+</Project>

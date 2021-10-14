@@ -23,7 +23,5 @@ jobs:
     - name: Publish
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
-        PROJECT_FILE_PATH: TailwindTemplate.ClientApp/TailwindTemplate.ClientApp.csproj
+        PROJECT_FILE_PATH: Template.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-        
-      

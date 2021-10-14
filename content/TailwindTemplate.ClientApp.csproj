@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-rc.2.21480.10"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-rc.2.21480.10" PrivateAssets="all"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\FONT-LICENSE"/>
+        <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css"/>
+        <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.eot"/>
+        <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.otf"/>
+        <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.svg"/>
+        <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.ttf"/>
+        <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.woff"/>
+        <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\ICON-LICENSE"/>
+        <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\README.md"/>
+    </ItemGroup>
+
+    <Target Name="CheckForNpm" BeforeTargets="BuildCSS">
+        <Exec Command="npm -v" ContinueOnError="true">
+            <Output TaskParameter="ExitCode" PropertyName="ErrorCode"/>
+        </Exec>
+        <Error Condition="'$(ErrorCode)' != '0'" Text="Please install NPM"/>
+    </Target>
+
+    <Target Name="BuildCSS" BeforeTargets="Compile">
+        <Exec Command="npx tailwindcss -i Styles/app.css -o wwwroot/css/app.css" Condition=" '$(Configuration)' == 'Debug' "/>
+        <Exec Command="npx tailwindcss -i Styles/app.css -o wwwroot/css/app.css" Condition=" '$(Configuration)' == 'Release' " EnvironmentVariables="NODE_ENV=production"/>
+    </Target>
+
+</Project>
