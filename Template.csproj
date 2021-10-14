@@ -7,10 +7,9 @@
         <Title>Blazor Tailwind Project Template</Title>
         <Authors>Jon Hilton</Authors>
         <Description>Project template to create Blazor WASM projects with Tailwind CSS</Description>
-        <PackageProjectUrl>https://practicaldotnet.io</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIconUrl>https://practicaldotnet.io/purple-logo-square.png</PackageIconUrl>
-        <RepositoryUrl>https://github.com/Practical-ASP-NET/TailwindBlazorStarter</RepositoryUrl>
+        <RepositoryUrl>https://github.com/Practical-ASP-NET/BlazorTailwindTemplate</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>blazor;tailwindcss;wasm;tailwind</PackageTags>
         <LangVersion>latest</LangVersion>
