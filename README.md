@@ -2,7 +2,9 @@
 
 ## Install template via nuget
 
+``` bash
 dotnet new --install PracticalDotNet.TailwindStarterProject::6.0.0-rc2.1
+```
 
 ## Install template from source
 
