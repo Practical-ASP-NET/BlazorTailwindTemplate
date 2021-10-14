@@ -8,7 +8,7 @@
       "language": "C#",
       "type": "project"
     },
-    "sourceName": "TailwindTemplate",
+    "sourceName": "TailwindTemplate.ClientApp",
     "symbols": {
       "Framework": {
         "type": "parameter",
