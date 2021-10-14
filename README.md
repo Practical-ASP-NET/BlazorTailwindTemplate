@@ -25,6 +25,10 @@ cd content
 dotnet new --install .
 ```
 
+In this example we instruct `dotnet` to look in the current folder (`.`) for any templates and install any it finds. 
+
+It should find the `.template.config` folder which instructs it that this is a template for it to install.
+
 ## Spin up a new project using the template
 
 Once you have the template installed it will show up in the list of templates for `dotnet new`.
@@ -48,3 +52,30 @@ dotnet watch
 ```
 
 This example creates the project in an ExampleApp folder, then launches it using `dotnet watch`.
+
+## Upgrading/downgrading the .NET version
+
+When you create a new project using this template you'll discover that the template uses a specific version of .NET.
+
+Taking the above example, if you looked at `ExampleApp\ExampleApp.csproj` you should see something like this...
+
+``` xml
+<PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+</PropertyGroup>
+
+<ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-rc.2.21480.10"/>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-rc.2.21480.10" PrivateAssets="all"/>
+</ItemGroup>
+
+...
+
+```
+
+If you wish to use a different version of .NET you will need to either:
+
+a) manually change the version numbers in here or 
+b) use the Nuget package manager in your IDE to downgrade the NuGet packages, and/or the .NET version.
