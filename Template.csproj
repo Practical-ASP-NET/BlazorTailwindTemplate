@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <PackageType>Template</PackageType>
         <TargetFramework>net6.0</TargetFramework>
         <PackageId>PracticalDotNet.TailwindStarterProject</PackageId>
         <Version>6.0.0-rc2</Version>
