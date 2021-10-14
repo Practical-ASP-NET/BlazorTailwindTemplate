@@ -24,8 +24,4 @@
         <Compile Remove="**\*"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Carter" Version="5.2.0"/>
-    </ItemGroup>
-
 </Project>
