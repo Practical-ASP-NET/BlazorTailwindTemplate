@@ -34,3 +34,6 @@ jobs:
 
     - name: Build
       run: dotnet build --configuration Release --no-restore
+
+    - name: Pack
+      run: dotnet pack -c Release --no-build
