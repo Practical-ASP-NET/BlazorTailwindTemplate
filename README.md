@@ -55,7 +55,7 @@ This example creates the project in an ExampleApp folder, then launches it using
 
 ## Upgrading/downgrading the .NET version
 
-When you create a new project using this template you'll discover that the template uses a specific version of .NET.
+When you create a new project using this template you'll discover that you new project references a specific version of .NET.
 
 Taking the above example, if you looked at `ExampleApp\ExampleApp.csproj` you should see something like this...
 
@@ -72,10 +72,11 @@ Taking the above example, if you looked at `ExampleApp\ExampleApp.csproj` you sh
 </ItemGroup>
 
 ...
-
 ```
 
-If you wish to use a different version of .NET you have a couple of options:
+If you wish to use a different version of .NET you will need to change the TargetFramework and Package References. There are a couple of ways to change the referenced package versions:
 
-- manually change the version numbers in here 
-- use the Nuget package manager in your IDE to downgrade the NuGet packages, and/or the .NET version.
+- Manually change the version numbers in the .csproj 
+- Use the Nuget package manager in your IDE to downgrade the NuGet packages
+
+You can also change the `TargetFramework` by manually updating the csproj or using your IDE to target a different version (for example net5.0).
