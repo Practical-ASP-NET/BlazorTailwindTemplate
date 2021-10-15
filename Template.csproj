@@ -17,11 +17,14 @@
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
+        <PackageProjectUrl>https://github.com/Practical-ASP-NET/BlazorTailwindTemplate</PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**"/>
-        <Compile Remove="**\*"/>
+        <Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**" />
+        <None Include="README.md" Pack="true" PackagePath="\" />
+        <Compile Remove="**\*" />
     </ItemGroup>
 
 </Project>
