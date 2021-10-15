@@ -55,7 +55,7 @@ This example creates the project in an ExampleApp folder, then launches it using
 
 ## Upgrading/downgrading the .NET version
 
-When you create a new project using this template you'll discover that you new project references a specific version of .NET.
+When you create a new project using this template you'll discover that your new project references a specific version of .NET.
 
 Taking the above example, if you looked at `ExampleApp\ExampleApp.csproj` you should see something like this...
 
