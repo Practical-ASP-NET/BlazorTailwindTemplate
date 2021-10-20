@@ -2,7 +2,7 @@ name: Build and Publish
 
 on:
   push:
-    branches: [release/5.0]
+    branches: [ release/5.0 ]
     paths-ignore:
       - '**/*.gitignore'
       - '**/*.gitattributes'
