@@ -29,13 +29,13 @@ jobs:
           NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}
 
       - name: Restore
-        run: dotnet restore -p:NetCoreTargetFramework=net5.0
+        run: dotnet restore
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore -p:NetCoreTargetFramework=net5.0 -p:PackageVersion=5.0.0
+        run: dotnet build --configuration Release --no-restore -p:PackageVersion=5.0.0
 
       - name: Pack
-        run: dotnet pack Template.csproj -c Release --no-build -p:NetCoreTargetFramework=net5.0 -p:PackageVersion=5.0.0 -o __out
+        run: dotnet pack Template.csproj -c Release --no-build -p:PackageVersion=5.0.0 -o __out
 
       - name: Push generated package to Nuget
         run: dotnet nuget push "./__out/*.nupkg" --skip-duplicate -k ${{secrets.NUGET_API_KEY}}
