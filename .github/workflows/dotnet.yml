@@ -29,7 +29,7 @@ jobs:
           NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}
 
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore -p:NetCoreTargetFramework=net5.0
 
       - name: Build
         run: dotnet build --configuration Release --no-restore -p:NetCoreTargetFramework=net5.0 -p:PackageVersion=5.0.0
