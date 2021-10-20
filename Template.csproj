@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <PackageId>PracticalDotNet.TailwindStarterProject</PackageId>
         <Title>Blazor Tailwind Project Template</Title>
         <Authors>Jon Hilton</Authors>
