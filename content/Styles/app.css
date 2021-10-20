@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 #blazor-error-ui {
-    display: none;
+    display: none !important;
 }

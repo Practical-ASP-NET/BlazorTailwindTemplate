@@ -2,7 +2,7 @@ name: Build and Publish
 
 on:
   push:
-    branches: [ main ]
+    branches: [release/5.0]
     paths-ignore:
       - '**/*.gitignore'
       - '**/*.gitattributes'
@@ -17,19 +17,25 @@ jobs:
       DOTNET_GENERATE_ASPNET_CERTIFICATE: false
       DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
       DOTNET_MULTILEVEL_LOOKUP: 0
-      
+    
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1.8.1
-      with:
-        dotnet-version: 6.0.100-rc.2.21505.57
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Publish
-      uses: brandedoutcast/publish-nuget@v2.5.5
-      with:
-        PROJECT_FILE_PATH: Template.csproj
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1.8.1
+        with:
+          dotnet-version: 5.0.x
+          source-url: https://api.nuget.org/v3/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore -p:NetCoreTargetFramework=net5.0 -p:PackageVersion=5.0.0
+
+      - name: Pack
+        run: dotnet pack Template.csproj -c Release --no-build -p:NetCoreTargetFramework=net5.0 -p:PackageVersion=5.0.0 -o __out
+
+      - name: Push generated package to Nuget
+        run: dotnet nuget push "./__out/*.nupkg" --skip-duplicate -k ${{secrets.NUGET_API_KEY}}
