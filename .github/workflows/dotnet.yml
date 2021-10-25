@@ -32,10 +32,10 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore -p:PackageVersion=6.0.0-rc2.1
+        run: dotnet build --configuration Release --no-restore -p:PackageVersion=6.0.0-rc2.2
 
       - name: Pack
-        run: dotnet pack Template.csproj -c Release --no-build -p:PackageVersion=6.0.0-rc2.1 -o __out
+        run: dotnet pack Template.csproj -c Release --no-build -p:PackageVersion=6.0.0-rc2.2 -o __out
 
       - name: Push generated package to Nuget
         run: dotnet nuget push "./__out/*.nupkg" --skip-duplicate -k ${{secrets.NUGET_API_KEY}}
