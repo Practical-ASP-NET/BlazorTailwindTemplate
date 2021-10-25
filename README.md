@@ -7,8 +7,10 @@ View on [Nuget.org](https://www.nuget.org/packages/PracticalDotNet.TailwindStart
 From anywhere on your machine you can use this command to install the template directly from Nuget.
 
 ``` bash
-dotnet new --install PracticalDotNet.TailwindStarterProject::6.0.0-rc2.1
+dotnet new --install PracticalDotNet.TailwindStarterProject::6.0.0-x
 ```
+
+(where x is a specific version, check [versions on nuget.org](https://www.nuget.org/packages/PracticalDotNet.TailwindStarterProject/)).
 
 ## Install template from source
 
