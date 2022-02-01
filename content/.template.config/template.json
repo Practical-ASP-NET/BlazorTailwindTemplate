@@ -1,7 +1,7 @@
 {
     "author": "Jon Hilton",
     "name": "Blazor WASM Tailwind Project Template",
-    "description": "Project template to create a Blazor WASM project with Tailwind CSS prefconfigured",
+    "description": "Project template to create a Blazor WASM project with Tailwind CSS preconfigured",
     "identity": "practicaldotnet.TailwindCSSBlazorWASMProject.1.0",
     "shortName": "blazor-tailwind",
     "tags": {
