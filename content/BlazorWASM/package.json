@@ -1,0 +1,14 @@
+{
+  "name": "tailwind-starter",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "tailwind": "cross-env NODE_ENV=development ./node_modules/tailwindcss/lib/cli.js -i ./Styles/app.css -o ./wwwroot/css/app.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.18"
+  }
+}

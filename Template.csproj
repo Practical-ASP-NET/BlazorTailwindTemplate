@@ -6,7 +6,7 @@
         <PackageId>PracticalDotNet.TailwindStarterProject</PackageId>
         <Title>Blazor Tailwind Project Template</Title>
         <Authors>Jon Hilton</Authors>
-        <Description>Project template to create Blazor WASM projects with Tailwind CSS</Description>
+        <Description>Project templates to create Blazor projects with Tailwind CSS</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIconUrl>https://practicaldotnet.io/purple-logo-square.png</PackageIconUrl>
         <RepositoryUrl>https://github.com/Practical-ASP-NET/BlazorTailwindTemplate</RepositoryUrl>
@@ -18,12 +18,24 @@
         <ContentTargetFolders>content</ContentTargetFolders>
         <PackageProjectUrl>https://github.com/Practical-ASP-NET/BlazorTailwindTemplate</PackageProjectUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <MinVerTagPrefix>v</MinVerTagPrefix>
     </PropertyGroup>
 
     <ItemGroup>
         <Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**" />
         <None Include="README.md" Pack="true" PackagePath="\" />
         <Compile Remove="**\*" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MinVer" Version="2.5.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="artifacts\" />
     </ItemGroup>
 
 </Project>

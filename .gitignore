@@ -32,3 +32,4 @@ _ReSharper*/
 packages/
 /.idea
 /TailwindTemplate.ClientApp/wwwroot/css/app.css
+/artifacts/

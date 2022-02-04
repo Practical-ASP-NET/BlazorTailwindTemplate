@@ -1,0 +1,26 @@
+{
+  "author": "Jon Hilton",
+  "name": "Blazor WASM Tailwind Project Template",
+  "classifications": [ "Web", "Blazor" ],
+  "description": "Project template to create a Blazor WASM project with Tailwind CSS preconfigured",
+  "identity": "practicaldotnet.TailwindCSSBlazorWASMProject.1.0",
+  "shortName": "blazorwasmtw, blazor-tailwind",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "TailwindTemplate.ClientApp",
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net6.0"
+        }
+      ],
+      "defaultValue": "net6.0"
+    }
+  }
+}

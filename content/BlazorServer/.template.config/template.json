@@ -1,0 +1,26 @@
+{
+  "author": "Jon Hilton",
+  "classifications": [ "Web", "Blazor" ],
+  "name": "Blazor Server Tailwind Project Template",
+  "description": "Project template to create a Blazor Server project with Tailwind CSS preconfigured",
+  "identity": "practicaldotnet.TailwindCSSBlazorServerProject.1.0",
+  "shortName": "blazorservertw",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "BlazorServer",
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net6.0"
+        }
+      ],
+      "defaultValue": "net6.0"
+    }
+  }
+}
