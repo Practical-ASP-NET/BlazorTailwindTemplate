@@ -4,6 +4,7 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<NpmLastInstall>node_modules/.last-install</NpmLastInstall>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -15,16 +16,22 @@
 		<_ContentIncludedByDefault Remove="wwwroot\css\bootstrap\bootstrap.min.css.map" />
 	</ItemGroup>
 
-	<Target Name="CheckForNpm" BeforeTargets="NpmInstall">
+	<Target Name="CheckForNpm" BeforeTargets="BuildCSS">
+		<Message Text="Checking for NPM" Importance="high" />
 		<Exec Command="npm -v" ContinueOnError="true">
 			<Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
 		</Exec>
-		<Error Condition="'$(ErrorCode)' != '0'" Text="You must install NPM to build this project" />
+		<Error Condition="'$(ErrorCode)' != '0'" Text="Please install NPM" />
 	</Target>
 
 	<Target Name="NpmInstall" BeforeTargets="Compile" Inputs="package.json" Outputs="$(NpmLastInstall)">
 		<Exec Command="npm install" />
 		<Touch Files="$(NpmLastInstall)" AlwaysCreate="true" />
+	</Target>
+
+	<Target Name="BuildCSSForProd" BeforeTargets="Compile" Condition="'$(Configuration)' == 'Release'">
+		<Message Text="Compiling CSS for production" Importance="high" />
+		<Exec Command="npm run buildcss:prod" />
 	</Target>
 
 </Project>

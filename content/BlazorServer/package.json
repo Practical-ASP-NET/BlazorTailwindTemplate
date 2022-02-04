@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "tailwind": "cross-env NODE_ENV=development ./node_modules/tailwindcss/lib/cli.js -i ./Styles/input.css -o ./wwwroot/css/output.css --watch"
+    "buildcss:watch": "cross-env NODE_ENV=development ./node_modules/tailwindcss/lib/cli.js -i ./Styles/app.css -o ./wwwroot/css/app.css --watch",
+    "buildcss:dev": "cross-env NODE_ENV=development ./node_modules/tailwindcss/lib/cli.js -i ./Styles/app.css -o ./wwwroot/css/app.css",
+    "buildcss:prod": "cross-env NODE_ENV=production ./node_modules/tailwindcss/lib/cli.js -i ./Styles/app.css -o ./wwwroot/css/app.css"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
