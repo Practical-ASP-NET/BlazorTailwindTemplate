@@ -35,3 +35,5 @@ packages/
 /artifacts/
 /content/BlazorServer/node_modules/
 /content/BlazorWASM/node_modules/
+**/.idea/**
+

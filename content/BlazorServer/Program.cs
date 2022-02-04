@@ -33,7 +33,7 @@ if (app.Environment.IsDevelopment())
 {
     // only run this in development as it launches the Tailwind CLI in "watch" mode,
     // which is a long-running process you probably don't want running on your server!
-    app.RunTailwind("tailwind", "./");
+    app.RunTailwind("buildcss:watch", "./");
 }
 
 app.Run();

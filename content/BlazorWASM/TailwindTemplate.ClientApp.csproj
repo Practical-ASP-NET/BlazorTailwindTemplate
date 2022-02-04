@@ -4,6 +4,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+		<NpmLastInstall>node_modules/.last-install</NpmLastInstall>
     </PropertyGroup>
 
     <ItemGroup>
@@ -31,22 +32,27 @@
       <Folder Include="wwwroot\css" />
     </ItemGroup>
 
-    <Target Name="CheckForNpm" BeforeTargets="BuildCSS">
-        <Message Text="Checking for NPM" Importance="high" />
-        <Exec Command="npm -v" ContinueOnError="true">
-            <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
-        </Exec>
-        <Error Condition="'$(ErrorCode)' != '0'" Text="Please install NPM" />
-    </Target>
+	<Target Name="CheckForNpm" BeforeTargets="BuildCSS">
+		<Message Text="Checking for NPM" Importance="high" />
+		<Exec Command="npm -v" ContinueOnError="true">
+			<Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+		</Exec>
+		<Error Condition="'$(ErrorCode)' != '0'" Text="Please install NPM" />
+	</Target>
 
-    <Target Name="BuildCSS" BeforeTargets="Compile" Inputs="@(InputStylesheets)" Outputs="wwwroot/css/app.css" Condition=" '$(Configuration)' == 'Debug' ">
-        <Message Text="Compiling CSS for development" Importance="high" />
-        <Exec Command="npx tailwindcss -i Styles/app.css -o wwwroot/css/app.css" />
-    </Target>
+	<Target Name="NpmInstall" BeforeTargets="BuildCSS" Inputs="package.json" Outputs="$(NpmLastInstall)">
+		<Exec Command="npm install" />
+		<Touch Files="$(NpmLastInstall)" AlwaysCreate="true" />
+	</Target>
 
-    <Target Name="BuildCSSForProd" BeforeTargets="Compile" Condition="'$(Configuration)' == 'Release'">
-        <Message Text="Compiling CSS for production" Importance="high" />
-        <Exec Command="npx tailwindcss -i Styles/app.css -o wwwroot/css/app.css" EnvironmentVariables="NODE_ENV=production" />
-    </Target>
+	<Target Name="BuildCSS" BeforeTargets="Compile">
+		<Message Text="Compiling CSS for development" Importance="high" />
+		<Exec Command="npm run buildcss:dev" Condition=" '$(Configuration)' == 'Debug' " />
+	</Target>
+
+	<Target Name="BuildCSSForProd" BeforeTargets="Compile" Condition="'$(Configuration)' == 'Release'">
+		<Message Text="Compiling CSS for production" Importance="high" />
+		<Exec Command="npm run buildcss:prod" />
+	</Target>
 
 </Project>
