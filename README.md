@@ -18,7 +18,7 @@ Alternatively, if you'd prefer, you can install it yourself from the source.
 
 Download the source then change into the `content` folder.
 
-There's more than one template in here, so pick the one you wnant and CD into that folder.
+There's more than one template in here, so pick the one you want and CD into that folder.
 
 From there you can install the template using `dotnet new --install`.
 
