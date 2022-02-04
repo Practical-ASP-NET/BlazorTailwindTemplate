@@ -4,7 +4,7 @@
   "classifications": [ "Web", "Blazor" ],
   "description": "Project template to create a Blazor WASM project with Tailwind CSS preconfigured",
   "identity": "practicaldotnet.TailwindCSSBlazorWASMProject.1.0",
-  "shortName": "blazorwasmtw, blazor-tailwind",
+  "shortName": "blazorwasmtw",
   "tags": {
     "language": "C#",
     "type": "project"

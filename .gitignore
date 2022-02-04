@@ -33,3 +33,5 @@ packages/
 /.idea
 /TailwindTemplate.ClientApp/wwwroot/css/app.css
 /artifacts/
+/content/BlazorServer/node_modules/
+/content/BlazorWASM/node_modules/
